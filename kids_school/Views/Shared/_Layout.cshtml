@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+
+    <link href="~/css/style.css" rel="stylesheet" />
+    <link href="~/css/style.min.css" rel="stylesheet" />
+
+    <script src="~/js/main.js"></script>
+
+    <link href="~/Content/Site.css" rel="stylesheet" />
+
+
+
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Nunito&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Flaticon Font -->
+    <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+<body>
+
+    <!-- Navbar Start -->
+    <div class="container-fluid bg-light position-relative shadow">
+        <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 px-lg-5">
+            <a href="" class="navbar-brand font-weight-bold text-secondary" style="font-size: 50px;">
+                <i class="flaticon-043-teddy-bear"></i>
+                <span class="text-primary">KidKinder</span>
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                <div class="navbar-nav font-weight-bold mx-auto py-0">
+
+                    @Html.ActionLink("Home", "Index", "Home", new { @class = "nav-link" })
+                    @Html.ActionLink("About", "About", "Home", new { @class = "nav-link" })
+                    @Html.ActionLink("Classes", "Classes", "Home", new { @class = "nav-link" })
+                    @Html.ActionLink("Teachers", "Teachers", "Home", new { @class = "nav-link" })
+                    @Html.ActionLink("Contact", "Contact", "Home", new { @class = "nav-link" })
+                </div>
+
+                @if (Session["UserId"] == null)
+                {
+                    @Html.ActionLink("Login", "Login", "Home", new { @class = "nav-link" })
+                    @Html.ActionLink("Signup", "signup", "Home", new { @class = "nav-link" })
+                }
+                else
+                {
+                    @Html.ActionLink("Logout", "Logout", "Home", new { @class = "nav-link" })
+                }
+
+
+
+                <span>@Session["Name"]</span>
+
+
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar End -->
+
+    @RenderBody()
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-secondary text-white mt-5 py-5 px-sm-3 px-md-5">
+        <div class="row pt-5">
+            <div class="col-lg-3 col-md-6 mb-5">
+                <a href="" class="navbar-brand font-weight-bold text-primary m-0 mb-4 p-0" style="font-size: 40px; line-height: 40px;">
+                    <i class="flaticon-043-teddy-bear"></i>
+                    <span class="text-white">KidKinder</span>
+                </a>
+                <p>
+                    Patana was a demoness.When kamsa, lord Krishna mama knew that Vevaki’s 8th son is still alive he decided to kill him so that he send putana to kill lord Krishan. Putana knew black magic she is fearless having long hair, curly nails, long and very dirty theeths.
+                </p>
+                <div class="d-flex justify-content-start mt-4">
+                    <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
+                       style="width: 38px; height: 38px;" href="#"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
+                       style="width: 38px; height: 38px;" href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
+                       style="width: 38px; height: 38px;" href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
+                       style="width: 38px; height: 38px;" href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h3 class="text-primary mb-4">Get In Touch</h3>
+                <div class="d-flex">
+                    <h4 class="fa fa-map-marker-alt text-primary"></h4>
+                    <div class="pl-3">
+                        <h5 class="text-white">Address</h5>
+                        <p>123 Street, Lucknow, India</p>
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <h4 class="fa fa-envelope text-primary"></h4>
+                    <div class="pl-3">
+                        <h5 class="text-white">Email</h5>
+                        <p>kidkinder@gmail.com</p>
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <h4 class="fa fa-phone-alt text-primary"></h4>
+                    <div class="pl-3">
+                        <h5 class="text-white">Phone</h5>
+                        <p>+919945678790</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h3 class="text-primary mb-4">Quick Links</h3>
+                <div class="d-flex flex-column justify-content-start">
+                    @Html.ActionLink("Home", "Index", "Home", new { @class = "nav-link" })
+                    @Html.ActionLink("About", "About", "Home", new { @class = "nav-link" })
+                    @Html.ActionLink("Classes", "Classes", "Home", new { @class = "nav-link" })
+                    @Html.ActionLink("Teachers", "Teachers", "Home", new { @class = "nav-link" })
+                    @Html.ActionLink("Contact", "Contact", "Home", new { @class = "nav-link" })
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <form action="">
+                    <img src="~/img/student.jpg" alt="Girl in a jacket" width="250" height="250">
+                </form>
+            </div>
+        </div>
+        <div class="container-fluid pt-5" style="border-top: 1px solid rgba(23, 162, 184, .2);;">
+            <p class="m-0 text-center text-white">
+                &copy; <a class="text-primary font-weight-bold" href="#">Your Site Name</a>. All Rights Reserved. Designed
+                by
+                <a class="text-primary font-weight-bold" href="https://htmlcodex.com">HTML Codex</a>
+            </p>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+
+</body>
+</html>

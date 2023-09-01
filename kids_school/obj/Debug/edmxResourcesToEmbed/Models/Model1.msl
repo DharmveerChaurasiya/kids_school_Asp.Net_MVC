@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="kiddbModelStoreContainer" CdmEntityContainer="kiddbEntities1">
+    <EntitySetMapping Name="kidtables">
+      <EntityTypeMapping TypeName="kiddbModel.kidtable">
+        <MappingFragment StoreEntitySet="kidtable">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="fname" ColumnName="fname" />
+          <ScalarProperty Name="classes" ColumnName="classes" />
+          <ScalarProperty Name="cnumber" ColumnName="cnumber" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
